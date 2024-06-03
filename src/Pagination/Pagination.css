@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 0 62px 62px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem 0;
+  gap: 0.1rem;
+}
+.active {
+  background-color: blanchedalmond;
+}

@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #3d3e43;
+}
+.description {
+  color: white;
+  padding-left: 10px;
+}
+img {
+  object-fit: cover;
+}

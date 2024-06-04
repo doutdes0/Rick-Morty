@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "React TypeScript on Replit, using Vite bundler",
+  "homepage": "https://doutdes0.github.io/Rick-Morty/",
   "scripts": {
     "predeploy": "npm run build",
     "dev": "vite",

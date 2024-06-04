@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, MouseEvent } from "react";
 import "./Pagination.css";
 
 const Pagination: React.FC<{
@@ -11,9 +11,8 @@ const Pagination: React.FC<{
   const handleNumClick = (i: number) => {
     setPagination((prev) => ({ ...prev, page: i + 1 + offset }));
   };
-  const handleDirClick = ({
-    target: { name },
-  }: MouseEvent<HTMLButtonElement>) => {
+  const handleDirClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const { name } = e.target as HTMLButtonElement;
     if (name === "prev") {
       if (page - offset === 1)
         setPagination((prev) => ({ ...prev, offset: prev.offset - 1 }));

@@ -6,7 +6,7 @@ import { Character, Params, APIRes } from "../utils/types";
 import Filter from "../Filter/Filter";
 import List from "../List/List";
 import Pagination from "../Pagination/Pagination";
-import headerimg from "/Rick-and-Morty-title.jpg";
+import headerimg from "../assests/Rick-and-Morty-title.jpg";
 
 export default function App() {
   const [characters, setCharacters] = useState<Character[]>([]);

@@ -7,7 +7,7 @@ const List: React.FC<{ chars: Character[] }> = ({ chars }) => {
       {chars.length > 0 ? (
         chars.map((char) => <Card key={char.id} char={char} />)
       ) : (
-        <p>No matches were found</p>
+        <p className="info">No matches were found</p>
       )}
     </div>
   );

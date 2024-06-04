@@ -10,11 +10,10 @@ main {
 header {
   background: black;
   height: 100px;
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
 header img {
-  position: absolute;
-  left: 40%;
   object-fit: cover;
 }
 

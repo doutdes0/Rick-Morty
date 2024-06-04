@@ -4,4 +4,11 @@
   grid-template-columns: repeat(auto-fill, 400px);
   grid-gap: 2rem;
   justify-content: space-between;
+  min-height: 400px;
+  position: relative;
+}
+.info {
+  position: relative;
+  left: 50%;
+  top: 50%;
 }

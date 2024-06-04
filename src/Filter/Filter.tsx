@@ -22,7 +22,6 @@ const Filter: React.FC<{
   const handleSelect = ({
     target: { name, value },
   }: ChangeEvent<HTMLSelectElement>) => {
-    console.log(name, value);
     if (name === "status-select") {
       if (value === "") {
         setParams((prev) => {

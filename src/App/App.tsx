@@ -12,15 +12,19 @@ export default function App() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [params, setParams] = useState<Params>({});
   //Set page apart from params, bc it's not supposed to be debounced
-  const [page, setPage] = useState(1);
+  const [pagination, setPagination] = useState({ page: 1, offset: 0 });
   const debouncedParams = useDebounce(params, 500);
-  const [res, status] = useFetch(debouncedParams, page);
+  const [res, status] = useFetch(debouncedParams, pagination.page);
 
   useEffect(() => {
-    if (res !== undefined) setCharacters(res.results);
+    if (res !== undefined && !status.error) setCharacters(res.results);
     else setCharacters([]);
-  }, [res]);
+  }, [res, status]);
 
+  //Deafult pagination on params change
+  useEffect(() => {
+    setPagination({ offset: 0, page: 1 });
+  }, [debouncedParams]);
   return (
     <>
       <header>
@@ -30,8 +34,9 @@ export default function App() {
         <Filter params={params} setParams={setParams} />
         <List chars={characters} />
         <Pagination
-          page={page}
-          setPage={setPage}
+          page={pagination.page}
+          offset={pagination.offset}
+          setPagination={setPagination}
           max={res ? res.info.pages : undefined}
           isLoading={status.isLoading}
         />

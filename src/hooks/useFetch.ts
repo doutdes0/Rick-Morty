@@ -16,9 +16,11 @@ export const useFetch = (
             params: { ...params, page },
           });
           setResult(res.data);
+          setStatus((prev) => ({ ...prev, error: "" }));
         } else {
           const res = await api.get<any, { data: APIRes }>("", { params });
           setResult(res.data);
+          setStatus((prev) => ({ ...prev, error: "" }));
         }
       } catch (e) {
         if (typeof e === "string") {

@@ -8,7 +8,10 @@
   position: relative;
 }
 .info {
-  position: relative;
-  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  max-width: fit-content;
+  height: fit-content;
   top: 50%;
+  left: 50%;
 }
